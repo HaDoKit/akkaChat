@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<GridPane fx:id="loginScene" prefHeight="466.0" prefWidth="323.0" styleClass="background-color-center-pane" stylesheets="@../style/loginscreen.css" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="General.Controller.LoginSceneController">
+   <columnConstraints>
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="133.0" minWidth="10.0" prefWidth="71.4" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="231.00000381469727" minWidth="10.0" prefWidth="171.0" />
+      <ColumnConstraints hgrow="SOMETIMES" maxWidth="146.39998474121091" minWidth="10.0" prefWidth="80.79999999999998" />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints maxHeight="237.6" minHeight="10.0" prefHeight="142.2" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="194.39999999999998" minHeight="10.0" prefHeight="18.400000000000006" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="194.39999999999998" minHeight="10.0" prefHeight="56.199984741210926" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="228.20001525878905" minHeight="10.0" prefHeight="34.59998474121096" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="228.20001525878905" minHeight="8.999984741210938" prefHeight="160.59999999999997" vgrow="SOMETIMES" />
+      <RowConstraints maxHeight="228.20001525878905" minHeight="10.0" prefHeight="55.80000000000001" vgrow="SOMETIMES" />
+   </rowConstraints>
+   <children>
+      <TextField fx:id="loginText" GridPane.columnIndex="1" GridPane.rowIndex="3">
+         <styleClass>
+            <String fx:value="background-radius-sm" />
+            <String fx:value="background-color-left-pane" />
+         </styleClass></TextField>
+      <Label alignment="CENTER" prefHeight="27.0" prefWidth="171.0" styleClass="login-text-field" text="Имя Пользователя" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Label>
+      <Button fx:id="connectButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="170.0" styleClass="login-button" text="Подключиться" GridPane.columnIndex="1" GridPane.rowIndex="4">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+   </children>
+</GridPane>

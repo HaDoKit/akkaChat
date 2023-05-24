@@ -1,0 +1,72 @@
+plugins {
+    //Scala-plugins
+    id 'scala'
+    //application support
+    id 'application'
+    //JavaFX
+    id 'org.openjfx.javafxplugin' version '0.0.14'
+
+}
+
+repositories {
+    mavenCentral()
+}
+
+sourceSets {
+    main {
+        scala {
+            srcDirs = ['src/main/scala']
+        }
+        resources {
+            srcDirs = ['src/main/resources']
+        }
+    }
+    test {
+        scala {
+            srcDirs = ['src/test/scala']
+        }
+        resources {
+            srcDirs = ['test/resources']
+        }
+    }
+}
+
+dependencies {
+
+    //Scala-Language
+    implementation 'org.scala-lang:scala-library:2.13.11-M1'
+
+    // https://mvnrepository.com/artifact/org.openjfx/javafx
+    implementation 'org.openjfx:javafx:21-ea+5:pom'
+    implementation 'org.openjfx:javafx:21-ea+5'
+    implementation platform('com.typesafe.akka:akka-bom_2.13:2.8.2')
+    implementation "com.typesafe.akka:akka-stream_2.13:2.8.2"
+    implementation 'com.typesafe.akka:akka-cluster-typed_2.13:2.8.2'
+    // пробуем автоматический поиск
+    implementation "com.typesafe.akka:akka-discovery_2.13:2.8.2"
+    implementation 'com.typesafe.akka:akka-actor-typed_2.13:2.8.2'
+
+    // https://mvnrepository.com/artifact/com.typesafe.akka/akka-remote
+    implementation 'com.typesafe.akka:akka-remote_2.13:2.8.2'
+    implementation "com.lightbend.akka.management:akka-management-cluster-bootstrap_2.13:1.4.0"
+    // https://mvnrepository.com/artifact/ch.qos.logback/logback-classic
+    implementation 'ch.qos.logback:logback-classic:1.4.6'
+    implementation 'com.typesafe.akka:akka-cluster-typed_2.13:2.8.2'
+    implementation 'com.typesafe.akka:akka-serialization-jackson_2.13:2.8.2'
+    testImplementation platform('org.junit:junit-bom:5.9.2')
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.9.2'
+    testImplementation 'com.typesafe.akka:akka-testkit_2.13:2.8.0'
+    testImplementation 'org.scalatest:scalatest_2.13:3.2.15'
+
+}
+
+
+application {
+    // Define the main class for the application.
+    mainClass = ''
+}
+
+javafx {
+    version = '18'
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
+}

@@ -1,0 +1,3 @@
+rootProject.name = 'akkaChat'
+include 'app'
+

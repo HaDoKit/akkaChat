@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="542.0" prefWidth="709.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="General.Controller.RoomController">
+   <children>
+      <VBox fx:id="roomScene" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="542.0" prefWidth="709.0" styleClass="background-color-center-pane" stylesheets="@../style/loginscreen.css">
+         <children>
+            <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="503.0" prefWidth="710.0" styleClass="background-color-center-pane">
+               <children>
+                  <VBox fillWidth="false" prefHeight="507.0" prefWidth="527.0">
+                     <children>
+                        <ListView fx:id="messageList" prefHeight="507.0" prefWidth="535.0">
+                           <styleClass>
+                              <String fx:value="background-color-center-pane" />
+                              <String fx:value="chat-text-field" />
+                           </styleClass>
+                        </ListView>
+                     </children>
+                  </VBox>
+                  <Separator orientation="VERTICAL" prefHeight="507.0" prefWidth="0.0" />
+                  <VBox prefHeight="507.0" prefWidth="175.0">
+                     <children>
+                        <ListView fx:id="userList" prefHeight="465.0" prefWidth="175.0">
+                           <styleClass>
+                              <String fx:value="background-color-center-pane" />
+                              <String fx:value="chat-text-field" />
+                           </styleClass>
+                        </ListView>
+                        <Button fx:id="connectNewChatButton" mnemonicParsing="false" prefHeight="30.0" prefWidth="174.0" text="Create Room">
+                           <styleClass>
+                              <String fx:value="login-text-field" />
+                              <String fx:value="message-box-container" />
+                           </styleClass>
+                           <opaqueInsets>
+                              <Insets />
+                           </opaqueInsets>
+                        </Button>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Separator prefHeight="0.0" prefWidth="612.0" />
+            <HBox maxHeight="-Infinity" maxWidth="-Infinity" prefHeight="43.0" prefWidth="710.0" styleClass="background-color-center-pane">
+               <children>
+                  <VBox prefHeight="32.0" prefWidth="3.0" />
+                  <TextField fx:id="sendField" prefHeight="26.0" prefWidth="522.0">
+                     <styleClass>
+                        <String fx:value="chat-text-field" />
+                        <String fx:value="border-none" />
+                        <String fx:value="message-box-container" />
+                        <String fx:value="login-text-field" />
+                     </styleClass>
+                  </TextField>
+                  <VBox prefHeight="40.0" prefWidth="8.0" />
+                  <Button fx:id="sendButton" mnemonicParsing="false" prefHeight="26.0" prefWidth="174.0" text="Send">
+                     <styleClass>
+                        <String fx:value="login-text-field" />
+                        <String fx:value="message-box-container" />
+                     </styleClass>
+                  </Button>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>
