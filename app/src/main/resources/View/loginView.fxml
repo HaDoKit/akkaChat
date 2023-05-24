@@ -23,7 +23,6 @@
       <TextField fx:id="loginText" GridPane.columnIndex="1" GridPane.rowIndex="3">
          <styleClass>
             <String fx:value="background-radius-sm" />
-            <String fx:value="background-color-left-pane" />
          </styleClass></TextField>
       <Label alignment="CENTER" prefHeight="27.0" prefWidth="171.0" styleClass="login-text-field" text="Имя Пользователя" textAlignment="CENTER" GridPane.columnIndex="1" GridPane.rowIndex="2">
          <font>
