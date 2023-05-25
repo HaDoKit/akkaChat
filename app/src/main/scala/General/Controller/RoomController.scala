@@ -61,7 +61,7 @@ class RoomController {
 
   def removeUser(user: String): Unit = {
     userList.getItems.removeIf(element => element == user)
-    ActorSystems.get() ! MessagePost(user, room.getRoom(), "Отключился:" + user, room.chatName())
+    addMessage( "Отключился:" + user)
   }
 
   def setRoom(chatName: String): Unit = {

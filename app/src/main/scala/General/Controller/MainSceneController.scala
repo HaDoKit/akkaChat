@@ -1,14 +1,15 @@
 package General.Controller
 
-import General.Constants
+import Actor.Sender.MemberDowns
 import General.System.ActorSystems
+import General.{Constants, SelfName}
 import Room.Room
 import javafx.event.Event
 import javafx.fxml.{FXML, FXMLLoader}
 import javafx.scene.control.{Tab, TabPane}
 import javafx.scene.layout.AnchorPane
 import javafx.scene.{Node, Scene}
-import javafx.stage.Stage
+import javafx.stage.{Stage, WindowEvent}
 
 import java.util.Objects
 
@@ -58,7 +59,15 @@ class MainSceneController {
     val node: AnchorPane = loaders.load()
     loaders.getController.asInstanceOf[RoomController].setRoom(chatName)
     tab.setContent(node)
+    tab.setOnCloseRequest( event => {
+      ActorSystems.get() ! MemberDowns(SelfName.getName(),room.getRoom(),chatName)
+      ActorSystems.get.terminate()
+      if( chatName == Constants.GeneralRoom ) {
+        // придумать как не дать пользователю закрыть общую вкладку
+      }
+    })
     tabPane.getTabs().add(tab)
+
   }
 
   def getInstance() : MainSceneController = {
@@ -70,10 +79,10 @@ class MainSceneController {
 
     val stage = window.asInstanceOf[Stage]
     stage.setScene(new Scene(loader.load()))
-//    stage.setOnCloseRequest((_: WindowEvent) => {
-//      actorSystem ! Logout(login)
-//      actorSystem.terminate()
-//    })
+    stage.setOnCloseRequest((_: WindowEvent) => {
+      ActorSystems.get() ! MemberDowns(SelfName.getName(),Room(Constants.GeneralRoom,ActorSystems.get()).getRoom(),chatName)
+      ActorSystems.get.terminate()
+    })
   }
   def initialize() : Unit = {
   }
